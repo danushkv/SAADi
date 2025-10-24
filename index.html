@@ -104,7 +104,7 @@
         <div class="column is-one-third">
           <img src="static/images/nips_model.png" alt="Method Illustration" style="display:block; margin: 20px auto; max-width: 100%;"> 
           <h2 class="subtitle has-text-centered">
-            Aligning the diffusion model with the downstream task 
+            Aligning the diffusion model with the requirements of the downstream task 
           </h2>
         </div>
       </div>
@@ -143,38 +143,36 @@
   <div class="hero-body">
     <div class="container is-max-desktop">
       <h2 class="title is-3 has-text-centered">Experimental Results</h2>
+      
+      <div class="columns is-centered">
+        <div class="column is-two-thirds has-text-centered">
+          <img src="static/images/nips_img1.png" alt="Comparison Plot" style="max-width: 100%; height: auto;">
+          <p class="content is-size-6">
+            **Comparison of image variations between baseline models**. SAADi overcomes the issue of data repitition and improves image diversity.
+          </p>
+        </div>
+      </div>
+
       <div class="columns is-centered">
         
-        <div class="column is-one-third has-text-centered">
-          <img src="static/images/n_ch.png" alt="CholecSeg8K Plot" style="max-width: 100%; height: auto;">
-          <p class="content is-size-6">Generated images from the **CholecSeg8K dataset** demonstrating visual quality after alignment.</p>
+        <div class="column is-half has-text-centered">
+          <img src="static/images/endo_seg_xcomp2.png" alt="CholecSeg8K Plot" style="max-width: 100%; height: auto;">
+          <p class="content is-size-6">
+            **Per-class F1 score on endoscapes dataset**. Scaling synthetic data with SAADi shows improved performance.
+          </p>
         </div>
         
-        <div class="column is-one-third has-text-centered">
-          <img src="static/images/n_hs.png" alt="HeiSurf Plot" style="max-width: 100%; height: auto;">
-          <p class="content is-size-6">Synthetic image samples generated using SAADi from the **HeiSurf dataset** for segmentation tasks.</p>
-        </div>
-        
-        <div class="column is-one-third has-text-centered">
-          <img src="static/images/image2a.png" alt="Comparison Plot" style="max-width: 100%; height: auto;">
-          <p class="content is-size-6">Quantitative **comparison against baseline** synthetic data generation methods across various metrics.</p>
+        <div class="column is-half has-text-centered">
+          <img src="static/images/auto_seg_xcomp2.png" alt="HeiSurf Plot" style="max-width: 100%; height: auto;">
+          <p class="content is-size-6">
+            **Synthetic samples scaling on autolaparo dataset**. Addition of samples from SAADi shows continuous improvement of segmentation scores.
+          </p>
         </div>
         
       </div>
     </div>
   </div>
 </section>
-<section class="hero is-small is-light">
-  <div class="hero-body">
-    <div class="container">
-      <h2 class="title">Poster</h2>
-
-      <iframe  src="static/pdfs/wacv_2025_poster.pdf" width="100%" height="550">
-          </iframe>
-        
-      </div>
-    </div>
-  </section>
 <section class="section" id="BibTeX">
     <div class="container is-max-desktop content">
       <h2 class="title">BibTeX</h2>
