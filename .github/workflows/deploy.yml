@@ -1,0 +1,44 @@
+name: Deploy Static Page to GitHub Pages
+
+on:
+  push:
+    branches:
+      - main  # Make sure this is the branch you are pushing to
+
+# Sets permissions of the GITHUB_TOKEN to allow deployment
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+# Allow only one concurrent deployment
+concurrency:
+  group: "pages"
+  cancel-in-progress: true
+
+jobs:
+  # Job to deploy the site
+  deploy:
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      # Setup Pages - required for the deployment action
+      - name: Setup Pages
+        uses: actions/configure-pages@v5
+
+      # Upload the contents of your repository root directory (which contains your html file)
+      - name: Upload artifact
+        uses: actions/upload-pages-artifact@v3
+        with:
+          # Assumes your 'html' file is in the root of the repository
+          path: . 
+
+      # Deploy to GitHub Pages
+      - name: Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v4
